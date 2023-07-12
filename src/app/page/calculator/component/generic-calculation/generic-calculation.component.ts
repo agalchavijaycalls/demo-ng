@@ -21,16 +21,20 @@ export class GenericCalculationComponent implements OnChanges {
   public number2: number = 0;
   @Input()
   public operation: string = '+';
+  // @Input()
+  // public operation1: string = '-';
+  
 
   @Output()
   public onResult: EventEmitter<number> = new EventEmitter<number>();
-
+  
   ngOnChanges(changes: SimpleChanges): void {
     let in1: number = this.number1;
-    let in2: number = this.number2
+    let in2: number = this.number2;
     let operation: string = this.operation;
     let result: number = 0;
-    if (changes['number1']) {
+    
+     if (changes['number1']) {
       in1 = changes['number1'].currentValue;
     }
     if (changes['number2']) {
@@ -54,5 +58,9 @@ export class GenericCalculationComponent implements OnChanges {
     }
 
     this.onResult.emit(result);
+    this.onResult.emit(result);
+    this.onResult.emit(result);
+    this.onResult.emit(result);
+    
   }
 }

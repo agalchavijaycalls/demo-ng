@@ -27,3 +27,4 @@ import { GenericCalculationComponent } from './component/generic-calculation/gen
 })
 export class CalculatorModule {
 }
+

@@ -1,4 +1,13 @@
-<div nz-row>
+
+
+
+
+
+
+
+
+<!-- <p>addition of two number</p>
+<div nz-row nzJustify="start">
   <div nz-col nzSpan="4">
     <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in1">
   </div>
@@ -6,23 +15,101 @@
     <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in2">
   </div>
   <div nz-col nzSpan="4">
-    <!--    <app-generic-calculation [number1]="1212" [number2]="213213" [operation]="'+'"></app-generic-calculation>-->
-  </div>
-  <div nz-col nzSpan="4">
     <app-generic-calculation [number1]="in1" [number2]="in2" [operation]="'+'"
             (onResult)="value = $event"></app-generic-calculation>
   </div>
-</div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="4">
+      {{value}}
+    </div>
+  </div>
+   <p>substract of two number</p>
+<div nz-row nzJustify="start">
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in1">
+  </div>
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in2">
+  </div>
+  
+  <div nz-col nzSpan="4">
+    <app-generic-calculation [number1]="in1" [number2]="in2" [operation]="'-'"
+            (onResult)="value = $event"></app-generic-calculation>
+  </div>
+  </div>
 <div nz-row>
   <div nz-col nzSpan="4">
-<!--    <button nz-button nzType="primary" (click)="add()">Click</button>-->
+   <button nz-button nzType="primary" (click)="add()">Click</button>
   </div>
   <div nz-col nzSpan="4">
-<!--    <button nz-button>Reset</button>-->
-  </div>
+   <button nz-button>Reset</button>
+  </div> 
 </div>
 <div nz-row>
   <div nz-col nzSpan="4">
     {{value}}
   </div>
 </div>
+
+
+<p>multiplication of two number</p>
+<div nz-row nzJustify="start">
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in1">
+  </div>
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in2">
+  </div>
+  
+  <div nz-col nzSpan="4">
+    <app-generic-calculation [number1]="in1" [number2]="in2" [operation]="'*'"
+            (onResult)="value = $event"></app-generic-calculation>
+  </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="4">
+      {{value}}
+    </div>
+  </div> 
+
+  <p>Devision of two number</p>
+<div nz-row nzJustify="start">
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in1">
+  </div>
+  <div nz-col nzSpan="4">
+    <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in2">
+  </div>
+
+  <div nz-col nzSpan="4">
+    <app-generic-calculation [number1]="in1" [number2]="in2" [operation]="'/'"
+            (onResult)="value = $event"></app-generic-calculation>
+  </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="4">
+      {{value}}
+    </div>
+  </div>  -->
+
+  <div nz-row nzJustify="start">
+    <div nz-col nzSpan="4">
+      <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in1">
+    </div>
+    <div nz-col nzSpan="4">
+      <input nz-input placeholder="Basic usage" type="number" [(ngModel)]="in2">
+    </div>
+    <nz-select  nzPlaceHolder="choose">
+      <nz-option>Sum</nz-option>
+      <nz-option>sub</nz-option>
+      <nz-option>multi</nz-option>
+      <nz-option>div</nz-option>
+     
+    </nz-select>
+    <nz-button-group >
+      <button nz-button nzType="primary">
+        <span nz-icon nzType="left"></span>
+        Click
+      </button>
+    
