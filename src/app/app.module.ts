@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { CounterService } from './page/calculator/component/generic-calculation/service/counter.service';
 
 registerLocaleData(en);
 
@@ -27,7 +28,8 @@ registerLocaleData(en);
     NzGridModule
   ],
   providers: [
-    {provide: NZ_I18N, useValue: en_US}
+    {provide: NZ_I18N, useValue: en_US},
+    CounterService
   ],
   bootstrap: [AppComponent]
 })

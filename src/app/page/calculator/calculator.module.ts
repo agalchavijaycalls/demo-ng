@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { GenericCalculationComponent } from './component/generic-calculation/generic-calculation.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CalculatorService } from './component/generic-calculation/service/calculator.service';
+import { CounterService } from './component/generic-calculation/service/counter.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,10 @@ import { GenericCalculationComponent } from './component/generic-calculation/gen
     NzButtonModule,
     NzInputModule,
     NzSelectModule,
-    NzGridModule
-  ]
+    NzGridModule,
+    NzIconModule
+  ],
+  providers: [CalculatorService]
 })
 export class CalculatorModule {
 }

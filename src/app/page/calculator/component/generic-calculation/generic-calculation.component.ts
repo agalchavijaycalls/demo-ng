@@ -7,6 +7,9 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
+import { CalcModel } from './CalcModel';
+import { CalculatorService } from './service/calculator.service';
+import { CounterService } from './service/counter.service';
 
 @Component({
   selector: 'app-generic-calculation',
@@ -16,45 +19,22 @@ import {
 })
 export class GenericCalculationComponent implements OnChanges {
   @Input()
-  public number1: number = 0;
-  @Input()
-  public number2: number = 0;
-  @Input()
-  public operation: string = '+';
-  // @Input()
-  // public operation1: string = '-';
+  public model?: CalcModel;
 
   @Output()
   public onResult: EventEmitter<number> = new EventEmitter<number>();
 
+  constructor(private service: CalculatorService, public countService: CounterService) {
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
-    let in1: number = this.number1;
-    let in2: number = this.number2;
-    let operation: string = this.operation;
     let result: number = 0;
+    let model = this.model;
 
-    if (changes['number1']) {
-      in1 = changes['number1'].currentValue;
+    if (changes['model']) {
+      model = changes['model'].currentValue;
     }
-    if (changes['number2']) {
-      in2 = changes['number2'].currentValue;
-    }
-    if (changes['operation']) {
-      operation = changes['operation'].currentValue;
-    }
-
-    if (operation === '+') {
-      result = in1 + in2;
-    }
-    if (operation === '-') {
-      result = in1 - in2;
-    }
-    if (operation === '*') {
-      result = in1 * in2;
-    }
-    if (operation === '/') {
-      result = in1 / in2;
-    }
+    result = this.service.process(model);
 
     this.onResult.emit(result);
   }

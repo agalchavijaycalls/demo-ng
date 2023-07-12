@@ -1,5 +1,20 @@
 <div nz-row>
-  <div nz-col nzSpan="10">{{number1}}</div>
-  <div nz-col nzSpan="4">{{operation}}</div>
-  <div nz-col nzSpan="10">{{number2}}</div>
+  <div nz-col nzSpan="10">{{model?.operand1}}</div>
+  <div nz-col nzSpan="4">{{model?.operation}}</div>
+  <div nz-col nzSpan="10">{{model?.operand2}}</div>
+</div>
+
+
+<div nz-row>
+  <div nz-col nzSpan="4">
+    {{countService.count}}
+  </div>
+  <div nz-col nzSpan="4">
+    <nz-button-group>
+      <button nz-button nzType="primary" (click)="countService.add()">
+        <span nz-icon nzType="left"></span>
+        Add
+      </button>
+    </nz-button-group>
+  </div>
 </div>

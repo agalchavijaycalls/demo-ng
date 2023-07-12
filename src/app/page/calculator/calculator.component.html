@@ -77,8 +77,7 @@
 
 <div nz-row>
   <div nz-col nzSpan="4">
-    <app-generic-calculation [number1]="in1" [number2]="in2" [operation]="operation"
-            (onResult)="value = $event"></app-generic-calculation>
+    <app-generic-calculation [model]="calcModel" (onResult)="value = $event"></app-generic-calculation>
   </div>
 </div>
 <div nz-row>
@@ -98,13 +97,27 @@
     <nz-option nzValue="+" nzLabel="Sum"></nz-option>
     <nz-option nzValue="-" nzLabel="sub"></nz-option>
     <nz-option nzValue="*" nzLabel="multi"></nz-option>
-    <!-- <nz-option nzValue="/" nzLabel="div"></nz-option> -->
+    <nz-option nzValue="/" nzLabel="div"></nz-option>
   </nz-select>
-  <!--<nz-button-group>
-    <button nz-button nzType="primary">
+  <nz-button-group>
+    <button nz-button nzType="primary" (click)="setValues()">
       <span nz-icon nzType="left"></span>
       Click
     </button>
-  </nz-button-group>-->
+  </nz-button-group>
 </div>
-    
+
+
+<div nz-row>
+  <div nz-col nzSpan="4">
+    {{counterService.count}}
+  </div>
+  <div nz-col nzSpan="4">
+    <nz-button-group>
+      <button nz-button nzType="primary" (click)="counterService.add()">
+        <span nz-icon nzType="left"></span>
+        Add
+      </button>
+    </nz-button-group>
+  </div>
+</div>

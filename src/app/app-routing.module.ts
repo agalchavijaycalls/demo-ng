@@ -8,7 +8,12 @@ const routes: Routes = [
   {
     path: 'calc',
     loadChildren: () => import('./page/calculator/calculator.module').then(m => m.CalculatorModule)
-  }];
+  },
+  {
+    path: 'passport',
+    loadChildren: () => import('./page/user/user.module').then(m => m.UserModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: true})],

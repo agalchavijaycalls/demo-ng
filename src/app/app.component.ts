@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from './page/calculator/component/generic-calculation/service/counter.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  constructor(public counterService: CounterService) {
+  }
 }
